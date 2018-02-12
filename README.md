@@ -15,7 +15,7 @@ Set up a template, then use `data-value` property to set up the parameter name:
 ```
 
 ## Binding the data by instantiate DataValue class
-*Instantiate a DataValue class to bind the data into HTML:*
+Instantiate a DataValue class to bind the data into HTML:
 ```
 var data = {
     name: "Kison Ho",
@@ -28,13 +28,12 @@ var dataValue = new DataValue(data, $("#template"));
 >     <span data-value='age'>20</span>
 > </div>
 
-*To customize the binding method for each parameter, add a function parameter after the template parameter:*
+To customize the binding method for each parameter, add a function parameter after the template parameter:
 ```
 var dataValue = new DataValue(data, $("#template"), function(parameter, data) {
     switch (parameter) {
     case "age":
-        data += 10;
-        $(this).text(data);
+        $(this).text(data + 10);
         break;
     }
 });
@@ -45,6 +44,9 @@ var dataValue = new DataValue(data, $("#template"), function(parameter, data) {
 > </div>
 
 ## Binding the data by calling jQuery function
+Data can be binded without instantiate the DataValue class by calling set/get jQuery functions directly.
+If that is needed, set up the data-value properties in HTML as normal, then call the functions.
+
 *Set data to template:*
 ```
 $("#template").setDataValue(data);
@@ -53,13 +55,12 @@ $("#template").setDataValue(data);
 >     <strong data-value='name'>Kison Ho</strong>
 >     <span data-value='age'>20</span>
 > </div>
-*Customize function also available while setting the data:*
+Customize function also available while setting the data:
 ```
 $("#template").setDataValue(data, function(parameter, data) {
     switch (parameter) {
     case "age":
-        data += 10;
-        $(this).text(data);
+        $(this).text(data + 10);
         break;
     }
 });
@@ -78,8 +79,7 @@ Get function also supports customize function:
 var data = $("#template").getDataValue(function(parameter, data) {
     switch (parameter) {
     case "age":
-        data += 10;
-        $(this).text(data);
+        $(this).text(data + 10);
         break;
     }
 });

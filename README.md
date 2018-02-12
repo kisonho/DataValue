@@ -74,6 +74,7 @@ $("#template").setDataValue(data, function(parameter, data) {
 ```
 Use `var data = $("#template").getDataValue();` can get an object of the template.
 > {'name': 'Kison Ho', 'age': '20'}
+
 Get function also supports customize function:
 ```
 var data = $("#template").getDataValue(function(parameter, data) {

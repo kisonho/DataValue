@@ -96,7 +96,7 @@ To bind an object with an object inside, just add '.' after the object name:
     <span data-value='age'></span>
     <hr>
     <span data-value='plan.name'></span><br>
-    <span data-value='when'></span>
+    <span data-value='plan.when'></span>
 </div>
 ```
 And instantiate the DataValue class or call set/get functions as normal:
